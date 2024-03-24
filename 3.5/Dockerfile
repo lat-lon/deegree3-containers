@@ -30,6 +30,7 @@ RUN chmod o+w /opt/bitnami/tomcat/bin/setenv.sh \
 	&& chmod o+w /opt/bitnami/tomcat/conf /opt/bitnami/tomcat/conf/* \
 	&& chmod o+w /opt/bitnami/tomcat/work/ \
 	&& chmod o+w /opt/bitnami/tomcat/temp \
+    && mkdir -p $DEEGREE_WORKSPACE_ROOT && chown 1001 $DEEGREE_WORKSPACE_ROOT \
     && mkdir -p $LOG_DIR && chmod a+w $LOG_DIR
 
 USER 1001
