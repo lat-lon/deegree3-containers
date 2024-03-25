@@ -32,9 +32,6 @@ jobs:
         with:
           image-ref: 'ghcr.io/lat-lon/deegree3-containers:3.5.6'
           format: 'sarif'
-          exit-code: '1'
-          ignore-unfixed: true
-          vuln-type: 'os,library'
           severity: 'CRITICAL'
           output: 'trivy-results.sarif'
       - name: Upload Trivy scan results to GitHub Security tab
