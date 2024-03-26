@@ -19,7 +19,9 @@ ENV LANG en_US.UTF-8
 
 USER root
 
-RUN apt-get update && apt-get -y install curl
+RUN echo 'deb http://deb.debian.org/debian sid main' > /etc/apt/sources.list.d/sid.list \
+    && echo $'Package: *\nPin: release n=sid\nPin-Priority: -10\n\nPackage: zlib1g\nPin: release n=sid\nPin-Priority: 501' > /etc/apt/preferences.d/sid.pref \
+    && apt-get update && apt-get -u install zlib1g && apt-get -y install curl
 
 WORKDIR /opt/bitnami/tomcat/webapps/
 # download deegree webservices WAR file
