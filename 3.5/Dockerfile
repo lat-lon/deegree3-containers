@@ -19,8 +19,9 @@ ENV LANG en_US.UTF-8
 
 USER root
 
-RUN echo 'deb http://deb.debian.org/debian sid main' > /etc/apt/sources.list.d/sid.list \
-    && echo $'Package: *\nPin: release n=sid\nPin-Priority: -10\n\nPackage: zlib1g\nPin: release n=sid\nPin-Priority: 501' > /etc/apt/preferences.d/sid.pref \
+# Reinstall zlib1g with fixed CVE-2023-45853 on trixie: https://security-tracker.debian.org/tracker/CVE-2023-45853
+RUN echo 'deb http://deb.debian.org/debian trixie main' > /etc/apt/sources.list.d/trixie.list \
+    && echo $'Package: *\nPin: release n=trixie\nPin-Priority: -10\n\nPackage: zlib1g\nPin: release n=trixie\nPin-Priority: 501' > /etc/apt/preferences.d/trixie.pref \
     && apt-get update && apt-get -u install zlib1g && apt-get -y install curl
 
 # download deegree webservices WAR file
