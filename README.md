@@ -25,7 +25,7 @@ configure and use deegree webservices.
 
 ## How to use a non-root container
 
-Non-root container images add an extra layer of security and are generally recommended for production environments. Because they run as a non-root user, privileged tasks are typically off-limits.
+Non-root container images add an extra layer of security and are generally recommended for production environments. Because they run as a non-root user, privileged tasks are typically off-limits. When mounting a deegree workspace directory into the container's filesystem keep in mind to grant required read and write permissions to the user (`$UID`, set to `1001`) on the host filesystem. 
 
 ## How to use it
 
