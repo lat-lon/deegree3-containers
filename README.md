@@ -21,7 +21,7 @@ configure and use deegree webservices.
 
 ## Docker images on GitHub Container Registry
 
-[https://hub.docker.com/r/deegree/deegree3-docker/](https://github.com/lat-lon/deegree3-containers/pkgs/container/deegree3-containers)
+[https://github.com/lat-lon/deegree3-containers/pkgs/container/deegree3-containers](https://github.com/lat-lon/deegree3-containers/pkgs/container/deegree3-containers)
 
 ## How to use a non-root container
 
