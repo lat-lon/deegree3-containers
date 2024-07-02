@@ -1,7 +1,7 @@
 FROM bitnami/tomcat:9.0.87-debian-12-r0
 
 # set deegree version
-ARG DEEGREE_VERSION=3.5.6
+ARG DEEGREE_VERSION=3.5.8
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VCS_URL
