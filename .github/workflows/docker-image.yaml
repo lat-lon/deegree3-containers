@@ -28,7 +28,7 @@ jobs:
           push: true
           tags: ghcr.io/lat-lon/deegree3-containers:3.5.8,ghcr.io/lat-lon/deegree3-containers:3.5,ghcr.io/lat-lon/deegree3-containers:latest
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@0.28.0
         with:
           image-ref: 'ghcr.io/lat-lon/deegree3-containers:3.5.8'
           format: 'sarif'
