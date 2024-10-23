@@ -5,6 +5,7 @@ ARG DEEGREE_VERSION=3.5.8
 ARG BUILD_DATE
 ARG VCS_REF
 ARG VCS_URL
+ARG WEB_CONTEXT=deegree-webservices
 LABEL maintainer="lat/lon <info@lat-lon.de>" \
 	"org.opencontainers.image.vendor"="lat/lon GmbH" \
     "org.opencontainers.image.created"="$BUILD_DATE" \
@@ -25,7 +26,11 @@ RUN echo 'deb http://deb.debian.org/debian trixie main' > /etc/apt/sources.list.
     && apt-get update && apt-get -u install zlib1g && apt-get -y install curl
 
 # download deegree webservices WAR file
-RUN curl https://repo.deegree.org/content/repositories/public/org/deegree/deegree-webservices/${DEEGREE_VERSION}/deegree-webservices-${DEEGREE_VERSION}.war -o /opt/bitnami/tomcat/webapps/deegree-webservices.war
+RUN curl https://repo.deegree.org/content/repositories/public/org/deegree/deegree-webservices/${DEEGREE_VERSION}/deegree-webservices-${DEEGREE_VERSION}.war -o /tmp/deegree-webservices.war
+RUN mkdir /opt/bitnami/tomcat/webapps/$WEB_CONTEXT \
+	&& cd /opt/bitnami/tomcat/webapps/$WEB_CONTEXT \
+	&& jar xf /tmp/deegree-webservices.war \
+	&& rm /tmp/deegree-webservices.war
 
 RUN chmod o+w /opt/bitnami/tomcat/bin/setenv.sh \
     && chmod o+w /opt/bitnami/tomcat/logs/ \
