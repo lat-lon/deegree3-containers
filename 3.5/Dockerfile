@@ -1,4 +1,4 @@
-FROM bitnami/tomcat:9.0.93-debian-12-r1
+FROM bitnami/tomcat:9.0-debian-12
 
 # set deegree version
 ARG DEEGREE_VERSION=3.5.10
