@@ -23,7 +23,7 @@ USER root
 # Reinstall zlib1g with fixed CVE-2023-45853 on trixie: https://security-tracker.debian.org/tracker/CVE-2023-45853
 RUN echo 'deb http://deb.debian.org/debian trixie main' > /etc/apt/sources.list.d/trixie.list \
     && echo $'Package: *\nPin: release n=trixie\nPin-Priority: -10\n\nPackage: zlib1g\nPin: release n=trixie\nPin-Priority: 501' > /etc/apt/preferences.d/trixie.pref \
-    && apt-get update && apt-get -u install zlib1g && apt-get -y install curl
+    && apt-get update && apt-get -u install zlib1g && apt-get -y install curl fontconfig
 
 # download deegree webservices WAR file
 RUN curl https://repo.deegree.org/content/repositories/public/org/deegree/deegree-webservices/${DEEGREE_VERSION}/deegree-webservices-${DEEGREE_VERSION}.war -o /tmp/deegree-webservices.war
