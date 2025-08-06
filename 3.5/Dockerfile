@@ -1,6 +1,6 @@
 FROM bitnami/tomcat:10.1-debian-12 AS builder
 
-ARG DEEGREE_VERSION=3.5.13
+ARG DEEGREE_VERSION=3.5.15
 ARG TC_MIG_VERSION=1.0.9
 
 USER root
