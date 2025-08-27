@@ -7,7 +7,7 @@
 # Quick reference
 
 ## lat/lon container with deegree webservices
-This repository contains Dockerfiles for [deegree web services](https://www.deegree.org/) to build container images with ready-to-use deegree webservices based on the Bitnami's Apache Tomcat package.
+This repository contains Dockerfiles for [deegree web services](https://www.deegree.org/) to build container images with ready-to-use deegree webservices based on the official Apache Tomcat package.
 
 - The containers are continuously updated when new versions are made available
 - Security scan is enabled and automatically executed with every update
