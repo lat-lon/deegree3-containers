@@ -28,8 +28,12 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ghcr.io/lat-lon/deegree3-containers:3.5.17,ghcr.io/lat-lon/deegree3-containers:3.5,ghcr.io/lat-lon/deegree3-containers:latest
+          build-args: |
+            BUILD_DATE=${{ github.event.head_commit.timestamp }}
+            VCS_REF=${{ github.sha }}
+            VCS_URL=${{ github.repositoryUrl }}
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@0.30.0
+        uses: aquasecurity/trivy-action@0.33.1
         with:
           image-ref: 'ghcr.io/lat-lon/deegree3-containers:3.5.17'
           format: 'sarif'
