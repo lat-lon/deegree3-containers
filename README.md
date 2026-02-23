@@ -2,7 +2,8 @@
 
 # Supported tags and respective `Dockerfile` links
 
-- deegree 3.5.x (JDK 17/Tomcat 9): `3.5.17`, `3.5`, `latest` (deprecated tags: `3.5.16`, `3.5.15`, `3.5.13`, `3.5.12`,  `3.5.11`, `3.5.10`,`3.5.8`, `3.5.6`) - [Dockerfile](https://github.com/lat-lon/deegree3-containers/blob/main/3.5/Dockerfile)
+- deegree 3.5.x (JDK 11/Tomcat 9): `3.5.17`, `3.5` (deprecated tags: `3.5.16`, `3.5.15`, `3.5.13`, `3.5.12`,  `3.5.11`, `3.5.10`,`3.5.8`, `3.5.6`) - [Dockerfile](https://github.com/lat-lon/deegree3-containers/blob/main/3.5/Dockerfile)
+- deegree 3.6.x (JDK 17/Tomcat 10.1): `3.6.6`, `3.6`, `latest` - [Dockerfile](https://github.com/lat-lon/deegree3-containers/blob/main/3.5/Dockerfile)
 
 # Quick reference
 
@@ -18,6 +19,8 @@ Do you want to move your container to a Kubernetes infrastructure? We are provid
 
 Please consult the [deegree documentation](https://download.deegree.org/documentation/current/html/) for further information how to
 configure and use deegree webservices.
+
+> **_NOTE:_** deegree 3.6 does **not** contain REST API and Admin console
 
 ## Docker images on GitHub Container Registry
 
