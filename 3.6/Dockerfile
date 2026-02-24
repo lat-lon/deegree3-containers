@@ -1,15 +1,15 @@
 FROM alpine:3.23 AS builder
 
-ARG DEEGREE_VERSION=3.5.17
+ARG DEEGREE_VERSION=3.6.6
 
 USER root
 
 RUN apk --no-cache add curl \
     && mkdir -p /build_deegree \
     && cd /build_deegree \
-    && curl https://repo.deegree.org/content/repositories/public/org/deegree/deegree-webservices/${DEEGREE_VERSION}/deegree-webservices-${DEEGREE_VERSION}.war -o /build_deegree/deegree-webservices.war
+    && curl https://repo.deegree.org/content/repositories/public/org/deegree/deegree-webservices-minimal/${DEEGREE_VERSION}/deegree-webservices-minimal-${DEEGREE_VERSION}.war -o /build_deegree/deegree-webservices-minimal.war
 
-FROM tomcat:9.0-jdk11-temurin-noble AS runner
+FROM tomcat:10.1-jdk17-temurin-noble AS runner
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -30,11 +30,11 @@ USER root
 
 RUN apt-get update && apt-get -y install unzip fontconfig
 
-COPY --from=builder /build_deegree/deegree-webservices.war /tmp/deegree-webservices.war
+COPY --from=builder /build_deegree/deegree-webservices-minimal.war /tmp/deegree-webservices-minimal.war
 RUN mkdir /usr/local/tomcat/webapps/$WEB_CONTEXT \
 	&& cd /usr/local/tomcat/webapps/$WEB_CONTEXT \
-    && unzip '/tmp/deegree-webservices.war' \
-    && rm /tmp/deegree-webservices.war
+    && unzip '/tmp/deegree-webservices-minimal.war' \
+    && rm /tmp/deegree-webservices-minimal.war
 
 #RUN chmod o+w /usr/local/tomcat/bin/setenv.sh
 RUN  chmod o+w /usr/local/tomcat/logs/
