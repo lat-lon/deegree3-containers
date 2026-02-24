@@ -38,12 +38,12 @@ jobs:
           image-ref: 'ghcr.io/lat-lon/deegree3-containers:3.5.17'
           format: 'sarif'
           severity: 'CRITICAL'
-          output: 'trivy-results.sarif'
+          output: 'trivy-results-3.5.sarif'
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v3
         if: always()
         with:
-          sarif_file: 'trivy-results.sarif'
+          sarif_file: 'trivy-results-3.5.sarif'
 
   build-3_6:
     runs-on: ubuntu-latest
@@ -71,12 +71,12 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.34.1
         with:
-          image-ref: 'ghcr.io/lat-lon/deegree3-containers:3.6.17'
+          image-ref: 'ghcr.io/lat-lon/deegree3-containers:3.6.6'
           format: 'sarif'
           severity: 'CRITICAL'
-          output: 'trivy-results.sarif'
+          output: 'trivy-results-3.6.sarif'
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v3
         if: always()
         with:
-          sarif_file: 'trivy-results.sarif'
+          sarif_file: 'trivy-results-3.6.sarif'
