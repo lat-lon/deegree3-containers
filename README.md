@@ -2,8 +2,8 @@
 
 # Supported tags and respective `Dockerfile` links
 
-- deegree 3.5.x (JDK 11/Tomcat 9): `3.5.17`, `3.5` (deprecated tags: `3.5.16`, `3.5.15`, `3.5.13`, `3.5.12`,  `3.5.11`, `3.5.10`,`3.5.8`, `3.5.6`) - [Dockerfile](https://github.com/lat-lon/deegree3-containers/blob/main/3.5/Dockerfile)
 - deegree 3.6.x (JDK 17/Tomcat 10.1): `3.6.6`, `3.6`, `latest` - [Dockerfile](https://github.com/lat-lon/deegree3-containers/blob/main/3.5/Dockerfile)
+- deegree 3.5.x (JDK 11/Tomcat 9): `3.5.18`, `3.5` (deprecated tags: `3.5.17`, `3.5.16`, `3.5.15`, `3.5.13`, `3.5.12`,  `3.5.11`, `3.5.10`,`3.5.8`, `3.5.6`) - [Dockerfile](https://github.com/lat-lon/deegree3-containers/blob/main/3.5/Dockerfile)
 
 # Quick reference
 
