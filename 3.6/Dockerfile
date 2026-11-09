@@ -1,6 +1,6 @@
-FROM alpine:3.23 AS builder
+FROM alpine:3.24 AS builder
 
-ARG DEEGREE_VERSION=3.6.10
+ARG DEEGREE_VERSION=3.6.14
 
 USER root
 
